@@ -65,16 +65,6 @@ h3{
     line-height: 2.2em;
 }
 
-.contact h2{
-    font-size: 34px;
-    margin-bottom: 0;
-}
-
-.contact h2 span{
-    font-weight: 700;
-    font-style: italic;
-}
-
 .small-header{
     text-transform: uppercase;
     font-size: 11.5px;
@@ -256,34 +246,134 @@ nav a{
 }
 
 /**
- * Contact
+ * Portfolio
  */
 
-.contact{
-    text-align: center;
-    background-color: #f9e4d8;
-    padding: 40px 0;
+.portfolio-grid{
+    display: grid;
+    grid-auto-rows: 280px;
+    grid-gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr)); 
+    margin: 0 6vw 60px 6vw;
 }
 
-.contact button{
-    height: 40px;
-    width: 140px;
-    background-color: #fff;
-    border: 1px solid #333;
+.portfolio-grid .grid-2{
+    grid-row: span 2;
+}
+
+.portfolio-grid .grid-3{
+    grid-row: span 1;
+    grid-column: span 2;
+}
+
+.projects .row{
+    margin-bottom: 0;
+    padding-bottom: 10px;
+}
+
+.projects .col{
+    margin-right: 0;
+}
+
+.portfolio-btns{
+    text-align: right;
+}
+
+.portfolio-btns button{
+    border: none;
+    outline: none;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 5px;
-    font-weight: 600;
+    font-size: 11.5px;
+    letter-spacing: 2px;
+    line-height: 1.6em;
+    color: #555;
+    background-color: #fff;
+    padding: 8px 12px;
+    margin-right: 4px;
+}
+
+.portfolio-btns button:last-child{
+    margin-right: 0;
+}
+
+.portfolio-btns button.active,
+.portfolio-btns button:hover{
+    background:#f9e4d8;
+}
+
+.projects .filtered{
+    opacity: 1;
+    transform: scale(1);
+    filter: grayscale(0%);
+    pointer-events: auto;
+}
+
+.portfolio-item{
+    opacity: 0.5;
+    filter: grayscale(50%);
+    transition: transform .4s;
+    transform: scale(0.85);
+    pointer-events: none;
+}
+
+.portfolio-item img{
+    min-height: 101%;
+    min-width: 101%;
+    object-fit: cover;
+}
+
+.portfolio-item h2{
+    margin-bottom: 0.4em;
     color: #333;
 }
 
-.contact button:hover{
-    background: #333;
+.portfolio-item a{
+    text-decoration:none;
+}
+
+.portfolio-item:hover{
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-item .overlay{
+    background: rgba(255,255,255,0.9);
+    position: absolute;
+    height: 101%;
+    width: 101%;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.portfolio-item:hover .overlay{
+    opacity: 1;
+}
+
+.portfolio-item .overlay-content{
+    text-align: center;
+}
+
+.portfolio-item button{
+    padding: 10px 15px;
+    width: 140px;
+    border: 1px solid #333;
+    background-color: transparent;
+    color: #111;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+    outline: none;
+}
+
+.portfolio-item button:hover{
+    background-color: #333;
     color: #fff;
-    -webkit-transition: background-color 0.3s ease-out;
-    -moz-transition: background-color 0.3s ease-out;
-    -o-transition: background-color 0.3s ease-out;
-    transition: background-color 0.3s ease-out;
+    transition: all 0.2s ease;
 }
 
 /**
@@ -351,6 +441,11 @@ footer .social li{
     .box:nth-child(3n){
         margin-left: 20px;
     }
+
+    .portfolio-btns button{
+        padding: 8px 6px;
+        margin-right: 0;
+    }
 }
 
 @media all and (max-width: 809px){
@@ -378,7 +473,7 @@ footer .social li{
         margin-bottom: 20px;
     }
 
-    .row:not(.hero-sec):not(.boxes){
+    .row:not(.hero-sec):not(.boxes):not(.filter-sec){
         display: flex; 
         flex-flow: column;
     }
@@ -430,14 +525,36 @@ footer .social li{
         width: 100%;
         height: 100%;
         padding: 0 15px;
-    } 
-
-    .contact{
-        margin-top: 26px;
     }
 
-    .contact h2{
-        font-size: 28px;
+    .projects .row{
+        display: inline-block;
+    }
+
+    .portfolio-btns{
+        display: none;
+    }
+
+    .portfolio-grid{
+        grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+    }
+
+    .portfolio-grid .grid-2{
+        grid-row: span 1;
+    }
+
+    .portfolio-grid .grid-3{
+        grid-column: span 1;
+    }
+
+    .portfolio-item img{
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    .portfolio-item .overlay{
+        width: 100%;
+        height: 100%;
     }
 }
 
@@ -486,6 +603,12 @@ footer .social li{
 
     .box{
         height: 120px;
+    }
+
+    .portfolio-grid .grid-1,
+    .portfolio-grid .grid-2,
+    .portfolio-grid .grid-3{
+        grid-column: span 2;
     }
 
     footer{

@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600&family=Playfair+Display:ital,wght@0,500;0,700;1,700&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
     <script src="https://use.fontawesome.com/87793c18b0.js"></script>
     <link rel="shortcut icon" href="favicon.ico" />
     <title>Stephanie Hansen</title>
@@ -18,7 +19,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#interests">Interests</a></li>
                 <li><a href="#goals">Goals</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#projects">Projects</a></li>
             </ul>
         </nav>
     </header>
@@ -105,13 +106,80 @@
                 </div>
             </div>
         </section>
-    </main>
 
-    <section class="contact" id="contact">
-        <h2>Say <span>hello.</span></h2>
-        <p>Feel free to drop me an email, I'd love to hear from you!</p>
-        <a href="mailto:hello@stephaniehansen.co.uk"><button>Contact Me</button></a>
-    </section>
+        <section class="projects" id="projects">
+            <div class="row filter-sec">
+                <div class="col">
+                    <span class="small-header">Projects</span>
+                    <h2>Some of my <span>previous work.</span></h2>
+                </div>
+                <div class="col">
+                    <div class="portfolio-btns">
+                        <button class="btn active" onclick="filter('all')">View All</button>
+                        <button class="btn" onclick="filter('frontend')">Front-end</button>
+                        <button class="btn" onclick="filter('java')">Java</button>
+                        <button class="btn" onclick="filter('ui-ux')">UI/UX Design</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item grid-1 frontend ui-ux">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h2>Inside the Room</h2>
+                            <a href="http://stephaniehansen.co.uk/portfolio/inside-the-room/" target="_blank"><button>View Project</button></a>
+                        </div>
+                    </div>
+                    <img src="images/portfolio-itr.jpg" alt="Inside the Room">
+                </div>
+                <div class="portfolio-item grid-1 ui-ux">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h2>Litrate</h2>
+                            <a href="http://stephaniehansen.co.uk/portfolio/litrate/" target="_blank"><button>View Project</button></a>
+                        </div>
+                    </div>
+                    <img src="images/portfolio-litrate.jpg" alt="Litrate">
+                </div>
+                <div class="portfolio-item grid-2 frontend">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h2>Techtris</h2><a href="http://techtris.com" target="_blank"><button>View Project</button></a>
+                        </div>
+                    </div>
+                    <img src="images/portfolio-techtris.jpg" alt="Techtris">
+                </div>
+                <div class="portfolio-item grid-2 java">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h2>The Tower</h2>
+                            <a href="https://github.com/stephaniehansen/tower-mvc-gui" target="_blank"><button>View Project</button></a>
+                        </div>
+                    </div>
+                    <img src="images/portfolio-tower.jpg" alt="The Tower">
+                </div>
+                <div class="portfolio-item grid-1 frontend ui-ux">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h2>Basil Intranet</h2>
+                            <a href="http://stephaniehansen.co.uk/portfolio/basil/" target="_blank"><button>View Project</button></a>
+                        </div>
+                    </div>
+                    <img src="images/portfolio-basil.jpg" alt="Basil">
+                </div>
+                <div class="portfolio-item grid-3 java">
+                    <div class="overlay">
+                        <div class="overlay-content">
+                            <h2>UTS News</h2>
+                            <a href="https://github.com/stephaniehansen/uts-news" target="_blank"><button>View Project</button></a>
+                        </div>
+                    </div>
+                    <img src="images/portfolio-news.jpg" alt="UTS News">
+                </div>
+            </div>   
+        </section>
+    </main>
 
     <footer>
         <span class="copyright">&copy; 2020 Stephanie Hansen. All Rights Reserved.</span>
